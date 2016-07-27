@@ -1,0 +1,20 @@
+sorry, i do not know how to directly comment a line in your code: 
+
+
+Line 75,76 in h5read.h: 
+=======================
+gpc-f102n003-ib0-$ make
+CXX=h5c++ mkoctfile -g -c h5read.cc
+In file included from h5read.cc(54):
+h5read.h(75): error: data member initializer is not allowed
+    hsize_t *h5_dims = NULL;
+                     ^
+
+In file included from h5read.cc(54):
+h5read.h(76): error: data member initializer is not allowed
+    hsize_t *h5_maxdims = NULL;
+=======================
+
+I have to put the init. in a constructor function to pass the compilation: 
+
+
